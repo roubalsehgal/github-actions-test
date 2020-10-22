@@ -3,7 +3,7 @@ name: Shell Commands
 on: [push]
 
 jobs:
-  shell-command: 
+  run-shell-command: 
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
@@ -18,7 +18,7 @@ jobs:
           print(platform.processor())
         shell: python
 
-  windows-commands:
+  run-windows-commands:
     runs-on: windows-latest
     needs: ["run-shell-command"]
     steps:
