@@ -1,9 +1,9 @@
-name: Github Actions Test - Shell Commands
+name: Shell Commands
 
 on: [push]
 
 jobs:
-  run-shell-command: 
+  shell-command: 
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
@@ -18,7 +18,7 @@ jobs:
           print(platform.processor())
         shell: python
 
-  run-windows-commands:
+  windows-commands:
     runs-on: windows-latest
     needs: ["run-shell-command"]
     steps:
@@ -27,4 +27,8 @@ jobs:
       - name: Directory Bash
         run: pwd
         shell: bash
+      - name: Show Directory Items
+        run: dir
+        shell: bash
+        
   
